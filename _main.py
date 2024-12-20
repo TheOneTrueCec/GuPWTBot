@@ -21,6 +21,7 @@ if __name__ == "__main__":
 
     load_dotenv()
     TOKEN = os.getenv("DISCORD_TOKEN")
+    SERVER = os.getenv("SERVER")
 
     config = configparser.ConfigParser()
     config.read("./.config")
@@ -35,7 +36,7 @@ if __name__ == "__main__":
 @Client.event
 async def on_ready():
     print(f'We have logged in as {Client.user}')
-    await Client.tree.sync(guild=discord.Object(id=811763650258927636))
+    await Client.tree.sync(guild=discord.Object(id=SERVER))
     cacheHeatmap.start()
     print("---Ready---")
 
@@ -49,7 +50,7 @@ async def on_message(message: discord.message.Message):
 @Client.tree.command(
     name="heatmap",
     description="Arguments to be added",
-    guild=discord.Object(id=811763650258927636)
+    guild=discord.Object(id=SERVER)
 )
 async def first_command(interaction: discord.interactions.Interaction):
     file=discord.File("./ImageCache/brHeatMapGRB.png", filename="brHeatMapGRB.png")
