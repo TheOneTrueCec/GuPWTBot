@@ -49,7 +49,7 @@ async def on_message(message: discord.message.Message):
 #Commands
 @Client.tree.command(
     name="heatmap",
-    description="Arguments to be added",
+    description="Arguments to be added, Heatmap Refreshes every day",
     guild=discord.Object(id=SERVER)
 )
 async def first_command(interaction: discord.interactions.Interaction):
