@@ -1,2 +1,4 @@
 .env
 players.db
+*.png
+__pycache__
